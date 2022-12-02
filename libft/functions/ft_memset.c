@@ -6,7 +6,7 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:21:23 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/02 14:58:45 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/02 17:19:39 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int main(int argc, char const *argv[])
 	
 	printf("ft\t%s\n", input1);
 	printf("lib\t%s\n",input2);
-
 	
 	return (0);
 }

@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 17:58:14 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/02 17:36:51 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/02 17:37:17 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/02 17:59:37 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
-int	ft_isalpha(unsigned char c)
+void	*memcpy(void *dest, const void *src, int size);
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	int	pos;
+
+	pos = 0;
+	while (pos < size) // < or <= ? 
 	{
-		return (1);
+		dest[pos] = src[pos];
+		pos++;
 	}
-	return (0);
+	// beachtet nicht edge case: src kleiner size
+	// conditional statement?
+	
 }
-/*
-int	main (int argc, char const *argv[])
+
+int	main(int argc, char const *argv[])
 {
-	printf("ft\t%i\n", ft_isalpha(argv[1][0]));
-	printf("lib\t%i\n", isalpha(argv[1][0]));
-	return (0);
+	/* code */
+	return 0;
 }
-*/
