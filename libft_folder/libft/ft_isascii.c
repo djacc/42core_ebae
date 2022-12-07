@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:59:53 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/01 16:14:15 by ebae             ###   ########.fr       */
+/*   Created: 2022/11/29 18:30:32 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/07 16:28:04 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <ctype.h>
 #include <stdio.h>
 
-int	ft_strlen(const char *str)
-{
-	int	count;
+#include "libft.h"
 
-	count = 0;
-	while (str[count])
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
 	{
-		count++;
+		return (1);
 	}
-	return (count);
+	return (0);
 }
 
 /*
-int main(int argc, char const *argv[])
+int	main (int argc, char const *argv[])
 {
-	printf("ft\t%i\n", ft_strlen(argv[1]));
-	printf("lib\t%li\n", strlen(argv[1]));
+	printf("ft\t%i\n", ft_isascii(argv[1][0]));
+	printf("lib\t%i\n", isascii(argv[1][0]));
 	return (0);
 }
 */

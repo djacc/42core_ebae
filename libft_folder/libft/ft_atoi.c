@@ -1,41 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 16:21:23 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/02 17:19:39 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/05 16:22:08 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/07 17:07:08 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
-void	*ft_memset(void *str, int count, size_t size)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
+	int	sign;
+	int	sum;
 	int	pos;
 
+	sign = 1;
+	sum = 0;
 	pos = 0;
-	while(str + pos && pos <= size) // < or <= ?
+	//whitespace
+	while (str[pos] == ' ')
 	{
-		(unsigned char)str[pos] = count;	// string address + pos = char
-		//	change str to void array
 		pos++;
 	}
+	if (str[pos] == '+' || str[pos] == '-')
+	{
+		if (str[pos] == '-')
+		{
+			sign = -1;
+		}
+		pos++;
+	}
+	while (str[pos] >= '0' && str[pos] <= '9')
+	{
+		sum *= 10;
+		sum += str[pos] - '0';
+		pos++;
+	}
+	return (sign * sum);
 }
-
+/*
 int main(int argc, char const *argv[])
 {
-	char input1[10] = "0123456789";
-	char input2[10] = "0123456789";
-
-	ft_memset(input1, '.', 7*sizeof(char));
-	 memset(input2, '.', 7*sizeof(char));
-	
-	printf("ft\t%s\n", input1);
-	printf("lib\t%s\n",input2);
-	
+	printf("ft\t%i\n", ft_atoi(argv[1]));
+	printf("lib\t%i\n", atoi(argv[1]));
 	return (0);
 }
+*/

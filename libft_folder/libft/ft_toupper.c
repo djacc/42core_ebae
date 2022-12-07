@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 17:58:14 by ebae              #+#    #+#             */
-/*   Updated: 2022/11/29 18:36:10 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/05 16:17:22 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/07 16:40:43 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
 #include <stdio.h>
 
-int	ft_isdigit(unsigned char c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (c >= 97 && c <= 122)
 	{
-		return (1);
+		c -= 32;
 	}
-	return (0);
+	return (c);
 }
+
 /*
 int	main (int argc, char const *argv[])
 {
-	printf("ft\t%i\n", ft_isdigit(argv[1][0]));
-	printf("lib\t%i\n", isdigit(argv[1][0]));
+	printf("ft\t%i\n", ft_toupper(argv[1][0]));
+	printf("lib\t%i\n", toupper(argv[1][0]));
 	return (0);
 }
 */

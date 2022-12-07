@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 17:58:14 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/02 17:36:51 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/02 17:14:26 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/07 16:33:54 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include <strings.h>
 #include <stdio.h>
 
-int	ft_isalpha(unsigned char c)
+#include "libft.h"
+
+void	ft_bzero(void *str, size_t size)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	size_t	pos;
+	char	*ptr_swapper;
+
+	ptr_swapper = (char *)str;	
+	pos = 0;
+	while(pos <= size)
 	{
-		return (1);
+		ptr_swapper[pos] = '\0';
+		pos++;
 	}
-	return (0);
 }
-/*
-int	main (int argc, char const *argv[])
+
+///*
+int	main(int argc, char const *argv[])
 {
-	printf("ft\t%i\n", ft_isalpha(argv[1][0]));
-	printf("lib\t%i\n", isalpha(argv[1][0]));
+	char str[7] = "123";
+	printf("%s\n", str);
+	ft_bzero(str, 1);
+	printf("%s\n", str);
 	return (0);
 }
-*/
+//*/

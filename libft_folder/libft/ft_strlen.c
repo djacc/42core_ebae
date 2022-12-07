@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 19:01:31 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/02 13:22:33 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/01 15:59:53 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/07 17:07:03 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include <string.h>
 #include <stdio.h>
 
-int	ft_isprint(unsigned char c)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	if (c >= 32 && c <= 126)
+	size_t	count;
+
+	count = 0;
+	while (str[count])
 	{
-		return (1);
+		count++;
 	}
-	return (0);
+	return (count);
 }
-/*
-int	main (int argc, char const *argv[])
+
+///*
+int main(int argc, char const *argv[])
 {
-	printf("ft\t%i\n", ft_isprint(argv[1][0]));
-	printf("lib\t%i\n", isprint(argv[1][0]));
+	printf("ft\t%zu\n", ft_strlen(argv[1]));
+	printf("lib\t%li\n", strlen(argv[1]));
 	return (0);
 }
-*/
+//*/

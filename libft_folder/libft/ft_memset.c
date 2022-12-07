@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 17:14:26 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/02 17:34:12 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/01 16:21:23 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/07 16:33:59 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
 #include <stdio.h>
+#include <string.h>
 
-void	bzero(void *str, int size)
+#include "libft.h"
+
+void	*ft_memset(void *str, int count, size_t size)
 {
 	int	pos;
-	
+
 	pos = 0;
-	while(pos < size) // < or <= ???
+	while(str + pos && pos <= size) // < or <= ?
 	{
-		str[pos] = '\0';
+		(unsigned char)str[pos] = count;	// string address + pos = char
+		//	change str to void array
 		pos++;
 	}
 }
 
-int	main(int argc, char const *argv[])
+int main(int argc, char const *argv[])
 {
 	char input1[10] = "0123456789";
 	char input2[10] = "0123456789";
@@ -35,6 +38,6 @@ int	main(int argc, char const *argv[])
 	
 	printf("ft\t%s\n", input1);
 	printf("lib\t%s\n",input2);
-
+	
 	return (0);
 }

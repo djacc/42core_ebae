@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 17:37:17 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/02 17:59:37 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/05 16:03:15 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/07 16:55:18 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ctype.h>
 #include <stdio.h>
-#include <string.h>
 
-void	*memcpy(void *dest, const void *src, int size);
+#include "libft.h"
+
+
+int	ft_tolower(int c)
 {
-	int	pos;
-
-	pos = 0;
-	while (pos < size) // < or <= ? 
+	if (c >= 65 && c <= 90)
 	{
-		dest[pos] = src[pos];
-		pos++;
+		c += 32;
 	}
-	// beachtet nicht edge case: src kleiner size
-	// conditional statement?
-	
+	return (c);
 }
 
-int	main(int argc, char const *argv[])
+/*
+int	main (int argc, char const *argv[])
 {
-	/* code */
-	return 0;
+	printf("ft\t%i\n", ft_tolower(argv[1][0]));
+	printf("lib\t%i\n", tolower(argv[1][0]));
+	return (0);
 }
+*/
