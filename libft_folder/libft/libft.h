@@ -25,9 +25,9 @@ size_t	strlcat(char *dst, const char *src, size_t size);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
 // string locator
+int	strncmp(const char *s1, const char *s2, size_t n);
 	/* not implemented:
 				strrchr
-				strncmp */
 // sub-string locator
 	/* not implemented:
 				strnstr */
