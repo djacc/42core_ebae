@@ -6,7 +6,7 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 17:58:14 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/07 16:27:58 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/08 16:09:17 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_isalpha(int c)
 	}
 	return (0);
 }
-///*
+/*
 int	main (int argc, char const *argv[])
 {
 	printf("ft\t%i\n", ft_isalpha(argv[1][0]));
 	printf("lib\t%i\n", isalpha(argv[1][0]));
 	return (0);
 }
-//*/
+*/

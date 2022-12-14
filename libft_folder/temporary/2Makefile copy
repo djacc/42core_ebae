@@ -1,6 +1,6 @@
 .PHONY: all run clean fclean
 
-CC = gcc
+CC = cc
 MASTER = hello.c
 LINKERFLAG = -Wall -Werror -Wextra
 NAME = output
@@ -18,7 +18,8 @@ run: hello.c
 	@echo "> output	 ${GREEN}${NAME}${NC}"
 	@echo "> run		  ${CC} ${MASTER} ${LINKERFLAG} -o ${NAME}"
 	@echo "> ..."
-	@${CC} hello.c ${LINKERFLAG} -o ${NAME}
+	@${CC} hello.c ${LINKERFLAG} -c ${NAME}
+	@ar -rc 
 	@echo "> compile	 ${GREEN}SUCCESS${NC}"
 
 clean:
@@ -29,6 +30,6 @@ fclean:
 	@echo "> cleaning	 ${RED}${NAME}${NC}"
 	@rm ${NAME}
 
-make my_library
+#make my_library
 
 #re: rebuilding the process from the beginning

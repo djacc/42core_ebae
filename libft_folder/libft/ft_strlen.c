@@ -6,7 +6,7 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:59:53 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/07 17:07:03 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/08 16:20:55 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ size_t	ft_strlen(const char *str)
 	return (count);
 }
 
-///*
+/*
 int main(int argc, char const *argv[])
 {
 	printf("ft\t%zu\n", ft_strlen(argv[1]));
 	printf("lib\t%li\n", strlen(argv[1]));
 	return (0);
 }
-//*/
+*/

@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 18:00:56 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/08 18:16:22 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/08 19:07:38 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/08 19:09:04 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// fills the first n bytes of the memory area pointed to by s 
-// with the constant byte c.
-
-#include "libft.h"
-
-void	*memset(void *str, int c, size_t size)
-{
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)str;
-	while (size--)
-	{
-		*ptr++ = (unsigned char)c;
-	}
-	return (str);
-}
-
 /*
-int main()
+int main(int argc, char const *argv[])
 {
-	char str[10] = "hello";
-	my_memset(str, '*', 5);
+
 	return 0;
 }
 */
