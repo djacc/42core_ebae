@@ -6,7 +6,7 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:00:56 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/08 18:16:22 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/14 15:33:28 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "libft.h"
 
-void	*memset(void *str, int c, size_t size)
+void	*ft_memset(void *str, int c, size_t size)
 {
 	unsigned char	*ptr;
 

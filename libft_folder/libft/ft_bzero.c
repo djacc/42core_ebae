@@ -6,7 +6,7 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:14:26 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/08 16:08:44 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/14 16:00:00 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,25 @@
 
 void	ft_bzero(void *str, size_t size)
 {
-	size_t	pos;
-	char	*ptr_swapper;
+	char *ptr_str;
 
-	ptr_swapper = (char *)str;
-	pos = 0;
-	while (pos <= size)
+	size -= 1;
+	ptr_str = (char *)str;
+	while (size + 1)
 	{
-		ptr_swapper[pos] = '\0';
-		pos++;
+		ptr_str[size] = '\0';
+		size--;
 	}
+	
 }
 
-/*
-int	main(int argc, char const *argv[])
-{
-	char str[7] = "123";
-	printf("%s\n", str);
-	ft_bzero(str, 1);
-	printf("%s\n", str);
-	return (0);
-}
-*/
+//	replace with 0 until size the bytes of the pointer
+
+// int	main(int argc, char const *argv[])
+// {
+// 	char str[7] = "123";
+// 	printf("%s\n", str);
+// 	ft_bzero(str, 4);
+// 	printf("%s\n", str);
+// 	return (0);
+// }

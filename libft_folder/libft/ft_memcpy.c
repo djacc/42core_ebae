@@ -5,42 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 18:22:15 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/08 19:54:00 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/14 16:41:19 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <string.h>
+
 #include "libft.h"
 
-// to stop dereferencing when using NULL chars double pointer has to be used...
-
-void	*ft_memcpy(void *dst, const void *src, size_t size)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t size)
 {
-	unsigned char		*ptr_dst;
-	const unsigned char	*ptr_src;
+	size_t	count;
 
-	ptr_dst = (unsigned char *)dst;
-	ptr_src = (const unsigned char *)src;
-	while (size--)
+	char *ptr_src = (char *)src;
+	char *ptr_dst = (char *)dst;
+
+	if (src == dst)
+		return (NULL);
+	ptr_src = (char *)src;
+	ptr_dst = (char *)dst;
+	count = 0;
+	while (count < size)
 	{
-		*ptr_dst++ = *ptr_src++;
+		ptr_dst[count] = ptr_src[count];
+		count++;
 	}
-	return (dst);
+
+	return (ptr_dst);	// is this return correct? -> *void functions should return what? nothing?
 }
 
-// [crash]: memcpy does not behave well with NULL as both params with size
+//	ft_memcpy(((void*)0), ((void*)0), 3);
 
-/*
-int main()
-{
-
-	char in[9] = "1";
-	char out[9] = "\0";
-	printf("%s\n",out);
-	ft_memcpy(out, in, 5);
-//	memcpy(out, in, 5);
-	printf("%s\n",out);
-
-	return 0;
-}
-*/
+// int main ()
+// {
+//   char str1[] = "Geeks"; 
+//   char str2[] = "\th"; 
+ 
+//   puts("str1 before memcpy ");
+//   puts(str1);
+ 
+//   /* Copies contents of str2 to str1 */
+//   ft_memcpy(str1, str2, sizeof(str2));
+ 
+//   puts("\nstr1 after memcpy ");
+//   puts(str1);
+ 
+//   return 0;
+// }

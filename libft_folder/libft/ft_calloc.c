@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-void	*calloc(size_t nmemb, size_t size)
+#include "libft.h"
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
   // Calculate the total size to allocate
 	size_t total_size = nmemb * size;
@@ -14,7 +17,7 @@ void	*calloc(size_t nmemb, size_t size)
 	}
 
   // Zero out the allocated memory
-	memset(ptr, 0, total_size);
+	ft_memset(ptr, 0, total_size);
 
   // Return the pointer to the allocated and zeroed memory
 	return ptr;

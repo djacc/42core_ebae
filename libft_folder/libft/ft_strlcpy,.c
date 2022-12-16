@@ -6,13 +6,15 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:33:29 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/08 20:19:53 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/14 20:27:36 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // 1. copy dst 2 src up to size - 1, and add a NUll at the end.
 // return the size of src
 #include <stdio.h>
+#include "libft.h"
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
