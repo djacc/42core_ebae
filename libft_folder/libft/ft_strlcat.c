@@ -6,16 +6,12 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:02:48 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/08 16:33:42 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/16 14:46:02 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
 #include "libft.h"
-
-	// put src after dst, at most (size - dst - 1)
-	// why this infront of count?
 
 size_t	strlcat(char *dst, const char *src, size_t size)
 {
@@ -38,14 +34,3 @@ size_t	strlcat(char *dst, const char *src, size_t size)
 	}
 	return (src_len + dst_len);
 }
-/*
-int main(int argc, char const *argv[])
-{
-	char sorc[] = "123";
-	char dest[] = "abcde";
-
-	printf("length: %zu\n", strlcat(dest, sorc, 9));
-	printf("%s\n", dest);
-	return 0;
-}
-*/

@@ -6,12 +6,9 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:00:56 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/14 15:33:28 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/16 14:51:10 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// fills the first n bytes of the memory area pointed to by s 
-// with the constant byte c.
 
 #include "libft.h"
 

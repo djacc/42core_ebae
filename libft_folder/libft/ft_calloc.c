@@ -1,24 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/16 14:29:28 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/16 14:29:29 by ebae             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-  // Calculate the total size to allocate
-	size_t total_size = nmemb * size;
+	size_t	total_size;
+	void	*ptr;
 
-  // Allocate the memory using malloc
-	void *ptr = malloc(total_size);
+	total_size = nmemb * size;
+	ptr = malloc(total_size);
 	if (ptr == NULL)
-	{
-    // malloc failed, return NULL
-		return NULL;
-	}
-
-  // Zero out the allocated memory
+		return (NULL);
 	ft_memset(ptr, 0, total_size);
-
-  // Return the pointer to the allocated and zeroed memory
-	return ptr;
+	return (ptr);
 }

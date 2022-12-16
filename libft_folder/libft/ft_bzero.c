@@ -6,7 +6,7 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:14:26 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/14 16:00:00 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/16 14:18:27 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	ft_bzero(void *str, size_t size)
 {
-	char *ptr_str;
+	char	*ptr_str;
 
 	size -= 1;
 	ptr_str = (char *)str;
@@ -26,7 +26,6 @@ void	ft_bzero(void *str, size_t size)
 		ptr_str[size] = '\0';
 		size--;
 	}
-	
 }
 
 //	replace with 0 until size the bytes of the pointer

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy,.c                                      :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:33:29 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/14 20:27:36 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/16 14:47:51 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 // return the size of src
 #include <stdio.h>
 #include "libft.h"
-
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
@@ -33,20 +32,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (src_len);
 }
 
-/*
-[fail]: your strlcpy overflow the dest
-[fail]: your strlcpy does not works with 0-length string
-[crash]: your strlcpy copies while destsize is zero, or does not return the size of the string it tried to create
-*/
-
-/*
-int	main(int argc, char const *argv[])
-{
-	char sorc[] = "abcde";
-	char dest[] = "12345";
-
-	printf("%zu\n", strlcpy(dest, sorc, 6));
-	printf("dest: %s", dest);
-	return 0;
-}
-*/
+// this has some problems

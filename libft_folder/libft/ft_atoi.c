@@ -6,14 +6,16 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 16:22:08 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/08 17:58:31 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/16 15:02:14 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-
 #include "libft.h"
+
+// while (str[pos] == ' ' || (str[pos] <= '\r' && str[pos] >= '\0'))
+	// 	pos++;
 
 int	ft_atoi(const char *str)
 {
@@ -24,7 +26,8 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	sum = 0;
 	pos = 0;
-	while (str[pos] == ' ' || (str[pos] <= '\r' && str[pos] >= '\0'))
+	while (str[pos] == ' ' || str[pos] == '\f' || str[pos] == '\n'
+		|| str[pos] == '\r' || str[pos] == '\t' || str[pos] == '\v')
 		pos++;
 	if (str[pos] == '+' || str[pos] == '-')
 	{
@@ -40,13 +43,11 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * sum);
 }
-/*
-int main(int argc, char const *argv[])
-{
-	printf("ft\t%i\n", ft_atoi(argv[1]));
-	printf("lib\t%i\n", atoi(argv[1]));
-
-	printf("stan\t%i\n", atoi(""));
-	return (0);
-}
-*/
+// ///*
+// int main(int argc, char const *argv[])
+// {
+// 	printf("ft\t%i\n", ft_atoi(argv[1]));
+// 	printf("lib\t%i\n", atoi(argv[1]));
+// 	return (0);
+// }
+// //*/
