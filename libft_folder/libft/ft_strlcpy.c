@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 15:28:08 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/16 15:10:27 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/07 14:33:29 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/16 15:37:02 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// 1. copy dst 2 src up to size - 1, and add a NUll at the end.
+// return the size of src
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int index, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t			pos;
-	unsigned char	*ptr_str;
-	unsigned char	find;
+	size_t	pos;
+	size_t	src_len;
 
 	pos = 0;
-	ptr_str = (unsigned char *)str;
-	find = (unsigned char) index;
-	while (pos < size)
+	src_len = ft_strlen(src);
+	while (src[pos] && pos + 1 < size)
 	{
-		if (ptr_str[pos] == find)
-			return (&ptr_str[pos]);
+		dst[pos] = src[pos];
 		pos++;
 	}
-	return (NULL);
+	if (size)
+		dst[pos] = '\0';
+	return (src_len);
 }

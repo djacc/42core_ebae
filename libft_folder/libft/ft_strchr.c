@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 14:33:29 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/16 14:47:51 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/16 16:19:35 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/16 16:56:19 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// 1. copy dst 2 src up to size - 1, and add a NUll at the end.
-// return the size of src
 #include <stdio.h>
-#include "libft.h"
+#include <string.h>
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strchr(const char *str, int index)
 {
-	size_t	pos;
-	int		src_len;
-
-	src_len = ft_strlen(src);
-	pos = 0;
-	while (pos < size - 1)
+	while (*str)
 	{
-		dst[pos] = src[pos];
-		pos++;
+		if (*str == (char) index)
+		{
+			return ((char *)str);
+		}
+		str++;
 	}
-	dst[pos] = '\0';
-	return (src_len);
+	if ((char) index == 0)
+		return ((char *)str);
+	return (NULL);
 }
-
-// this has some problems
