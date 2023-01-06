@@ -6,7 +6,7 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 19:39:55 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/20 20:53:02 by ebae             ###   ########.fr       */
+/*   Updated: 2022/12/27 11:51:50 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,21 @@ maximum size ’len’.*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*new_s;
+	size_t	new_len;
+	char	*src;
 
 	if (!s)
 		return (NULL);
 	if (ft_strlen(s) < start)
-		len = 0;
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	new_s = (char *)malloc(sizeof(char) * (len + 1));
-	ft_strlcpy(new_s, s + start, len + 1);
+		return (ft_strdup(""));
+	src = (char *)s + start;
+	if (ft_strlen(src) < len)
+		new_len = ft_strlen(src) + 1;
+	else
+		new_len = len + 1;
+	new_s = (char *)malloc(new_len * sizeof(char));
+	if (!new_s)
+		return (NULL);
+	ft_strlcpy(new_s, src, new_len);
 	return (new_s);
-}
-
-{
-	char	*ret;
-
-	if (!s)
-		return (0);
-	if (ft_strlen(s) < start)
-		len = 0;
-	if (ft_strlen(s + start) < len)
-		len = ft_strlen(s + start);
-	ret = malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (0);
-	ft_strlcpy(ret, s + start, len + 1);
-	return (ret);
 }

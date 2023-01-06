@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:45 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/28 15:49:05 by ebae              #+#    #+#             */
+/*   Updated: 2023/01/04 12:06:32 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+// new node is added to the beginning of the list
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t size)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	count;
-	char	*ptr_src;
-	char	*ptr_dst;
-
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (src == dst)
-		return (NULL);
-	count = 0;
-	while (count < size)
+	if (lst)
 	{
-		ptr_dst[count] = ptr_src[count];
-		count++;
+		if (*lst)
+		{
+			new -> next = *lst;
+		}
+		*lst = new;
 	}
-	return (ptr_dst);
 }
+
+/*	visual represenation
+
+		[new] 
+		n1 - n2 - n3 - n4 - n5 ...
+	change n1 
+
+*/

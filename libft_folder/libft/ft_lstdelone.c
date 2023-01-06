@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:45 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/28 16:14:13 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/28 16:19:13 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+/*Takes as a parameter a node and frees the memory of
+the node’s content using the function ’del’ given
+as a parameter and free the node. The memory of
+’next’ must not be freed.*/
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t size)
+void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	size_t	count;
-	char	*ptr_src;
-	char	*ptr_dst;
-
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (src == dst)
-		return (NULL);
-	count = 0;
-	while (count < size)
+	if (lst)
 	{
-		ptr_dst[count] = ptr_src[count];
-		count++;
+		(*del)(lst -> content);
+		free(lst);
 	}
-	return (ptr_dst);
 }

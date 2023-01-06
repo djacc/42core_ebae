@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:45 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/27 15:46:30 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/27 16:47:28 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+/*Applies the function ’f’ on each character of
+the string passed as argument, passing its index
+as first argument. Each character is passed by
+address to ’f’ to be modified if necessary.*/
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	count;
-	char	*ptr_src;
-	char	*ptr_dst;
+	unsigned int	i;
 
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (src == dst)
-		return (NULL);
-	count = 0;
-	while (count < size)
+	if (!s)	
+		return;
+	i = 0;
+	while (s[i])
 	{
-		ptr_dst[count] = ptr_src[count];
-		count++;
+		f(i, &s[i]);
+		++i;
 	}
-	return (ptr_dst);
 }
+
+// difference to ft_strmapi is that the existing string is modified

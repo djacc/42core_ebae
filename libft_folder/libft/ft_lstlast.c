@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:45 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/28 16:02:31 by ebae              #+#    #+#             */
+/*   Updated: 2023/01/06 16:23:44 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	count;
-	char	*ptr_src;
-	char	*ptr_dst;
-
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (src == dst)
-		return (NULL);
-	count = 0;
-	while (count < size)
+	while (lst)
 	{
-		ptr_dst[count] = ptr_src[count];
-		count++;
+		if (!lst -> next)
+		{
+			return (lst);
+		}
+		lst = lst -> next;
 	}
-	return (ptr_dst);
+	return (lst);
 }

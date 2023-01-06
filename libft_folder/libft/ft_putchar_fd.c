@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:45 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/27 16:11:16 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/27 16:43:50 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
 #include "libft.h"
+#include <unistd.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t size)
+void ft_putchar_fd(char c, int fd)
 {
-	size_t	count;
-	char	*ptr_src;
-	char	*ptr_dst;
-
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (src == dst)
-		return (NULL);
-	count = 0;
-	while (count < size)
-	{
-		ptr_dst[count] = ptr_src[count];
-		count++;
-	}
-	return (ptr_dst);
+	write(fd, &c, 1);	//	what is the file descriptor? 
 }

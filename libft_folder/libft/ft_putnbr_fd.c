@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:45 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/27 16:33:15 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/27 17:09:49 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+/*Outputs the integer ’n’ to the given file
+descriptor.*/
 
 #include "libft.h"
+#include <unistd.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t size)
-{
-	size_t	count;
-	char	*ptr_src;
-	char	*ptr_dst;
+void	ft_putnbr_fd(int n, int fd)
+{	
+	int		sign;
+	char	c;
 
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (src == dst)
-		return (NULL);
-	count = 0;
-	while (count < size)
+	// if (n == -2147483648)
+	// {
+	// 	ft_putstr_fd("-2147483648", fd);
+	// 	return;
+	// }
+	sign = 1;
+	if (n < 0)
 	{
-		ptr_dst[count] = ptr_src[count];
-		count++;
+		ft_putchar_fd('-', fd);
+		sign = -1;
 	}
-	return (ptr_dst);
+	if (n / 10)
+		ft_putnbr_fd(n / 10 * sign, fd);	// recursion
+	c = '0' + n % 10 * sign;
+	ft_putchar_fd(c, fd);
 }

@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:45 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/28 15:15:27 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/28 16:48:51 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+/*Allocates (with malloc(3)) and returns a new node.
+The member variable ’content’ is initialized with
+the value of the parameter ’content’. The variable
+’next’ is initialized to NULL.*/
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t size)
+t_list *ft_lstnew(void *content)
 {
-	size_t	count;
-	char	*ptr_src;
-	char	*ptr_dst;
+	t_list *new;
 
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (src == dst)
-		return (NULL);
-	count = 0;
-	while (count < size)
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
 	{
-		ptr_dst[count] = ptr_src[count];
-		count++;
+		return (NULL);
 	}
-	return (ptr_dst);
+	new -> content = content;
+	new -> next = NULL;
+
+	return (new);
 }

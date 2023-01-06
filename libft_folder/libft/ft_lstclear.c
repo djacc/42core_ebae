@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:45 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/28 16:19:33 by ebae              #+#    #+#             */
+/*   Updated: 2022/12/28 16:24:28 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+/*Deletes and frees the given node and every
+successor of that node, using the function ’del’
+and free(3).
+Finally, the pointer to the list must be set to
+NULL.*/
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t size)
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	size_t	count;
-	char	*ptr_src;
-	char	*ptr_dst;
+	t_list	*tmp;
 
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (src == dst)
-		return (NULL);
-	count = 0;
-	while (count < size)
+	if (!del || !lst || !*lst)	// explain whyh any of those
 	{
-		ptr_dst[count] = ptr_src[count];
-		count++;
+		return;
 	}
-	return (ptr_dst);
+	while (lst && *lst)
+	{
+		tmp = (*lst) -> next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
+	}
+	
 }
