@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 15:49:05 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/04 12:06:32 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 19:17:11 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 		[new] 
 		n1 - n2 - n3 - n4 - n5 ...
 	change n1 
+
+	// next tag of new node becomes lst
+	// head of lst gets new
 
 */

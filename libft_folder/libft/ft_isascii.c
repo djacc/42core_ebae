@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:30:32 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/07 16:28:04 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 18:32:23 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,5 @@ int	ft_isascii(int c)
 }
 
 /*
-int	main (int argc, char const *argv[])
-{
-	printf("ft\t%i\n", ft_isascii(argv[1][0]));
-	printf("lib\t%i\n", isascii(argv[1][0]));
-	return (0);
-}
+check if askii
 */

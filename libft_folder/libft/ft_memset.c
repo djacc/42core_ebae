@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:00:56 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/16 14:51:10 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 19:50:19 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memset(void *str, int c, size_t size)
 	}
 	return (str);
 }
+
+// len of string chars become whatever you define
 
 /*
 int main()

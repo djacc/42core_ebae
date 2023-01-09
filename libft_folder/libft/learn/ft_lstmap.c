@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:27:03 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/06 16:24:05 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 19:50:26 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 	}
 	return (first);
 }
+
+// i dont understand the interaction of DEL

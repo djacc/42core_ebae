@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:01:31 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/07 16:28:16 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 18:32:47 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,5 @@ int	ft_isprint(int c)
 	return (0);
 }
 /*
-int	main (int argc, char const *argv[])
-{
-	printf("ft\t%i\n", ft_isprint(argv[1][0]));
-	printf("lib\t%i\n", isprint(argv[1][0]));
-	return (0);
-}
+is the char printable?
 */

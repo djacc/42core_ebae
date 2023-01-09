@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 13:42:07 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/27 15:00:49 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 19:03:04 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,13 @@ static	char	*ft_rev_str(char *str)
 	final = ft_strlen(str) - 1;
 	while (start < final - start)
 	{
+		// using bitwise operation ^ XOR, you can swap 2 variables with no temp
+		// its magic
 		str[start] = str[start] ^ str[final - start];
 		str[final - start] = str[start] ^ str[final - start];
 		str[start] = str[start] ^ str[final - start];
 		start++;
+		
 	}
 	return (str);
 }
@@ -76,3 +79,14 @@ char	*ft_itoa(int nb)
 	str[i] = '\0';
 	return (str = ft_rev_str(str));
 }
+
+// itoa:
+/*
+	nb becomes long int because of the MIN_VAL
+	calloc is used to allocated memory for new char string
+	ft_len_o_num returns the length of number
+	- num is 0: set char to 0 and increment i by 1
+	- num is -: set sign to -1, multiply number with -1 and add "-"
+	go thru number position and put into new string,
+	return the reverse of str, since my function finds num value in reverse
+*/

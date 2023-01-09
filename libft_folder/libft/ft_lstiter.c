@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:24:53 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/06 16:23:32 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 19:35:08 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,6 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst -> next;	// lst = ???
 	}
 }
+
+// apply function 
+// then move on

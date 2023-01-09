@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:19:33 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 16:24:28 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 19:27:18 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,8 @@ void ft_lstclear(t_list **lst, void (*del)(void*))
 	}
 	
 }
+
+/*
+check if del or lst is null, or if *lst is empty
+iterate thru the nodes and delete
+*/

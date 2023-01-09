@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 16:03:15 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/08 16:22:10 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 19:42:45 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,4 @@ int	ft_tolower(int c)
 	return (c);
 }
 
-/*
-int	main (int argc, char const *argv[])
-{
-	printf("ft\t%i\n", ft_tolower(argv[1][0]));
-	printf("lib\t%i\n", tolower(argv[1][0]));
-	return (0);
-}
-*/
+// make alpha lower

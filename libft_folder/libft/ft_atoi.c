@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 16:22:08 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/16 15:02:14 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 18:29:20 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * sum);
 }
-// ///*
-// int main(int argc, char const *argv[])
-// {
-// 	printf("ft\t%i\n", ft_atoi(argv[1]));
-// 	printf("lib\t%i\n", atoi(argv[1]));
-// 	return (0);
-// }
-// //*/
+
+/*
+1. check if input char is whitespace
+2. check for + or -, when - do following
+3. count numbers
+*/

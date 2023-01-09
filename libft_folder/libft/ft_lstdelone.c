@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:14:13 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 16:19:13 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/09 19:28:08 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,5 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
 		free(lst);
 	}
 }
+
+// DELETED!
