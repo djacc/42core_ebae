@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 15:15:27 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 16:48:51 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/10 19:10:30 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,5 @@ t_list *ft_lstnew(void *content)
 
 	return (new);
 }
+
+// creates a new node, with content set to INPUT and next to NULL

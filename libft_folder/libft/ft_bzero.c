@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:14:26 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/16 14:18:27 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/10 17:26:45 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,3 @@ void	ft_bzero(void *str, size_t size)
 }
 
 //	replace with 0 until size the bytes of the pointer
-
-// int	main(int argc, char const *argv[])
-// {
-// 	char str[7] = "123";
-// 	printf("%s\n", str);
-// 	ft_bzero(str, 4);
-// 	printf("%s\n", str);
-// 	return (0);
-// }

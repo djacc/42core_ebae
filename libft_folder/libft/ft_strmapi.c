@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:14:14 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/27 15:46:46 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/10 19:00:02 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ from successive applications of ’f’.*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;		// why unsigned?
+	unsigned int	i;		// i dont think ill have to use unsigned
 	char		*str;		// new string
 
 	if (!s || !f)			// return if either is empty

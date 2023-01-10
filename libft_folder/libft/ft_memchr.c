@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:28:08 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/16 19:24:44 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/10 19:10:31 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,6 @@ void	*ft_memchr(const void *str, int index, size_t size)
 	}
 	return (NULL);
 }
+
+// finds index inside the *str, inside size size_t size
+// return the pointer pointing to the location

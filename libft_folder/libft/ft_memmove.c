@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:07:38 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/16 14:43:56 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/10 19:10:28 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,5 @@ void	*ft_memmove(void *dst, const void *src, size_t size)
 		ft_memcpy(dst, src, size);
 	return (ptr_dst);
 }
+
+// the case with reverse finding. done to avoid overriding memory

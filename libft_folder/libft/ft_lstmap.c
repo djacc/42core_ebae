@@ -6,7 +6,7 @@
 /*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:27:03 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/09 19:50:26 by eddybae          ###   ########.fr       */
+/*   Updated: 2023/01/10 19:10:29 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 	return (first);
 }
 
-// i dont understand the interaction of DEL
+/*
+	applies function 'f' to content of the current node
+	create a new node with results of the above.
+	if new node was not created:
+*/
+// del is being used as a fail safe if memory allocation fails.
+// the function uses del to delete the content of each node 
+// then the memory is freed.
+
+// sum: function applied 'f' to the node, and returned the pointer head

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:22:57 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:45 by ebae             ###   ########.fr       */
+/*   Created: 2022/12/16 14:34:33 by ebae              #+#    #+#             */
+/*   Updated: 2023/01/10 19:10:32 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	count;
-	char	*ptr_src;
-	char	*ptr_dst;
+	const unsigned char	*ptr1;
+	const unsigned char	*ptr2;
 
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (src == dst)
-		return (NULL);
-	count = 0;
-	while (count < size)
+	ptr1 = s1;
+	ptr2 = s2;
+	while (n--)
 	{
-		ptr_dst[count] = ptr_src[count];
-		count++;
+		if (*ptr1 != *ptr2)
+			return (*ptr1 - *ptr2);
+		ptr1++;
+		ptr2++;
 	}
-	return (ptr_dst);
+	return (0);
 }
+
+// compares to n sized byte-strings, returning the difference

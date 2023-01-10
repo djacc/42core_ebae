@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:54:26 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/27 13:35:20 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/10 18:43:43 by eddybae          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ size_t	ft_toklen(const char *s, char c)
 	return (ret);
 }
 
-// usecases of the variables
-// how is ft_substr used, and what inputs are given to substr?
 char	**ft_split(const char *s, char c)
 {
 	char	**output;
@@ -46,7 +44,7 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (NULL);
 	i = 0;
-	output = malloc(sizeof(char *) * (ft_toklen(s, c) + 1)); // sizeof ?
+	output = malloc(sizeof(char *) * (ft_toklen(s, c) + 1));
 	if (!output)
 		return (NULL);
 	while (*s)
@@ -67,3 +65,6 @@ char	**ft_split(const char *s, char c)
 	output[i] = 0;
 	return (output);	
 }
+
+// first while loops finds char beginning and end. finds the len
+// substr is used to then get string.
