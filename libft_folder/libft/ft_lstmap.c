@@ -23,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 	t_list	*first;
 	t_list	*new;
 
-	if (!f || !del)			// protection!
+	if (!f || !del)
 	{
 		return (NULL);
 	}

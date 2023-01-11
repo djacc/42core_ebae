@@ -16,7 +16,6 @@
 	from the beginning and the end of the string.
 */
 
-//all chars inside set will be removed from the string beginning and end
 
 
 #include "libft.h"
