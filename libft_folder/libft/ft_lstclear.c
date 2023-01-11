@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:19:33 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/09 19:27:18 by eddybae          ###   ########.fr       */
+/*   Updated: 2023/01/11 13:51:38 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,21 @@ NULL.*/
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*tmp;
 
-	if (!del || !lst || !*lst)	// explain whyh any of those
+	if (!del || !lst || !*lst)
 	{
-		return;
+		return ;
 	}
 	while (lst && *lst)
 	{
-		tmp = (*lst) -> next;
+		tmp = (*lst)-> next;
 		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}
-	
 }
-
 /*
 check if del or lst is null, or if *lst is empty
 iterate thru the nodes and delete

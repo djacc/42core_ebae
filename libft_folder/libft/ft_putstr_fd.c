@@ -6,7 +6,7 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:17:13 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/27 16:47:15 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/11 13:34:01 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ descriptor.*/
 #include "libft.h"
 #include <unistd.h>
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
-		return;
+		return ;
 	write(fd, s, ft_strlen(s));
 }

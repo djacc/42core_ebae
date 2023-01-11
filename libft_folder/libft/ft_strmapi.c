@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:14:14 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/10 19:00:02 by eddybae          ###   ########.fr       */
+/*   Updated: 2023/01/11 13:26:47 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ to create a new string (with malloc(3)) resulting
 from successive applications of ’f’.*/
 
 #include "libft.h"
-
+// i dont think ill have to use unsigned
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;		// i dont think ill have to use unsigned
-	char		*str;		// new string
+	unsigned int	i;
+	char			*str;
 
-	if (!s || !f)			// return if either is empty
+	if (!s || !f)
 		return (NULL);
 	i = 0;
-	str = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));	//memory
+	str = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!str)
-		return (NULL);		// memory failure
-	while (s[i])			// input string
+		return (NULL);
+	while (s[i])
 	{
-		str[i] = (*f)(i, s[i]);		//function operation on each array
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
 	return (str);

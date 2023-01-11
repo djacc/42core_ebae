@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:54:26 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/10 18:43:43 by eddybae          ###   ########.fr       */
+/*   Updated: 2023/01/11 13:49:50 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,9 @@ char	**ft_split(const char *s, char c)
 	size_t	i;
 	size_t	len;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	output = malloc(sizeof(char *) * (ft_strcount(s, c) + 1));
-	if (!output)
+	if (!s || !output)
 		return (NULL);
 	while (*s)
 	{
@@ -67,8 +65,11 @@ char	**ft_split(const char *s, char c)
 			s++;
 	}
 	output[i] = 0;
-	return (output);	
+	return (output);
 }
 
 // first while loops finds char beginning and end. finds the len
 // substr is used to then get string.
+
+//	if (!output)
+//		return (NULL);
