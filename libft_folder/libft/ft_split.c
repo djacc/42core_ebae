@@ -3,18 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:54:26 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/10 18:43:43 by eddybae          ###   ########.fr       */
+/*   Updated: 2023/01/11 13:49:50 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-// how does ft_toklen affect the overall function stability?
-size_t	ft_toklen(const char *s, char c)
+/*Allocates (with malloc(3)) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter. The array must end
+with a NULL pointer.*/
+
+size_t	ft_strcount(const char *s, char c)
 {
 	size_t	ret;
 
@@ -23,14 +27,14 @@ size_t	ft_toklen(const char *s, char c)
 	{
 		if (*s != c)
 		{
-			ret++;	// instead of ++ret
+			ret++;
 			while (*s && *s != c)
 			{
-				s++;	// instead of above
+				s++;
 			}
 		}
 		else
-			s++; // same
+			s++;
 	}
 	return (ret);
 }
@@ -41,30 +45,31 @@ char	**ft_split(const char *s, char c)
 	size_t	i;
 	size_t	len;
 
-	if (!s)
-		return (NULL);
 	i = 0;
-	output = malloc(sizeof(char *) * (ft_toklen(s, c) + 1));
-	if (!output)
+	output = malloc(sizeof(char *) * (ft_strcount(s, c) + 1));
+	if (!s || !output)
 		return (NULL);
 	while (*s)
 	{
 		if (*s != c)
 		{
 			len = 0;
-			while (*s && *s != c)	// instead of ++len
+			while (*s && *s != c)
 			{
 				s++;
-				len++;				// here !
+				len++;
 			}
 			output[i++] = ft_substr(s - len, 0, len);
 		}
 		else
-			s++; // instead of ++s
+			s++;
 	}
 	output[i] = 0;
-	return (output);	
+	return (output);
 }
 
 // first while loops finds char beginning and end. finds the len
 // substr is used to then get string.
+
+//	if (!output)
+//		return (NULL);

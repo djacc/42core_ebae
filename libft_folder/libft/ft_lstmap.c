@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:27:03 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/10 19:10:29 by eddybae          ###   ########.fr       */
+/*   Updated: 2023/01/11 13:47:24 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,18 @@ delete the content of a node if needed.*/
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*first;
 	t_list	*new;
 
-	if (!f || !del)			// protection!
-	{
+	if (!f || !del)
 		return (NULL);
-	}
 	first = NULL;
 	while (lst)
 	{
-		if (!(new = ft_lstnew((*f)(lst -> content))))
+		new = ft_lstnew((*f)(lst -> content));
+		if (!(new))
 		{
 			while (first)
 			{

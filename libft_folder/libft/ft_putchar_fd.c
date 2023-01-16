@@ -6,14 +6,14 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:11:16 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/27 16:43:50 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/11 13:37:28 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);	//	what is the file descriptor? 
+	write(fd, &c, 1);
 }

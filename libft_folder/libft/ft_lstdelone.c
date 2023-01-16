@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:14:13 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/09 19:28:08 by eddybae          ###   ########.fr       */
+/*   Updated: 2023/01/11 13:32:52 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ as a parameter and free the node. The memory of
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (lst)
 	{
@@ -25,5 +25,3 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
 		free(lst);
 	}
 }
-
-// DELETED!

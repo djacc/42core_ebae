@@ -6,7 +6,7 @@
 /*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:46:30 by ebae              #+#    #+#             */
-/*   Updated: 2022/12/27 16:47:28 by ebae             ###   ########.fr       */
+/*   Updated: 2023/01/11 13:36:38 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
-	if (!s)	
-		return;
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{

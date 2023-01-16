@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddybae <eddybae@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 13:42:07 by ebae              #+#    #+#             */
-/*   Updated: 2023/01/09 19:03:04 by eddybae          ###   ########.fr       */
+/*   Updated: 2023/01/11 13:30:28 by ebae             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
+// if only using < it does not recognize case 0 input.
 int	ft_len_o_num(int nb)
 {
-	int len;
+	int	len;
 
 	len = 0;
-	if (nb <= 0)	// if only using < it does not recognize case 0 input.
+	if (nb <= 0)
 		len++;
 	while (nb)
 	{
@@ -28,8 +29,8 @@ int	ft_len_o_num(int nb)
 	return (len);
 }
 
-//	why reverse the string?
-//	rewrite this part										// REWRITE THIS PART!!!
+// using bitwise operation ^ XOR, you can swap 2 variables with no temp
+// its magic
 static	char	*ft_rev_str(char *str)
 {
 	int	start;
@@ -39,13 +40,10 @@ static	char	*ft_rev_str(char *str)
 	final = ft_strlen(str) - 1;
 	while (start < final - start)
 	{
-		// using bitwise operation ^ XOR, you can swap 2 variables with no temp
-		// its magic
 		str[start] = str[start] ^ str[final - start];
 		str[final - start] = str[start] ^ str[final - start];
 		str[start] = str[start] ^ str[final - start];
 		start++;
-		
 	}
 	return (str);
 }
@@ -53,7 +51,7 @@ static	char	*ft_rev_str(char *str)
 char	*ft_itoa(int nb)
 {
 	int			i;
-	long int	sign;	// long int? min value handle
+	long int	sign;
 	long int	nb_edit;
 	char		*str;
 
@@ -73,9 +71,7 @@ char	*ft_itoa(int nb)
 		nb_edit /= 10;
 	}
 	if (sign)
-	{
 		str[i++] = '-';
-	}
 	str[i] = '\0';
 	return (str = ft_rev_str(str));
 }
