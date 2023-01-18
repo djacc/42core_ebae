@@ -1,7 +1,6 @@
-//#include "ft_printf.h"
-//#include "libft.h"
-
+#include "include/ft_printf.h"
 #include <unistd.h>
+#include <stdio.h>
 
 int	ft_printf(const char *str)
 {
@@ -14,6 +13,7 @@ int	ft_printf(const char *str)
 		write(1, &str[pos], 1);
 		pos++;
 	}
+	printf("\n\tlen: %li\n", ft_strlen(str));
 	write(1, "\n", 1);
 
 	// this part will scan and look for certain triggers
@@ -35,7 +35,9 @@ int	ft_printf(const char *str)
 
 		// to do this we first need to find out how to modify the makefile
 		so that i can test with ./a.out file which is still connected to the libs
+		DONE!
 
+		first check input correctness, for that understand multiple vatiable function
 
 	*/
 

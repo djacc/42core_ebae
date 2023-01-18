@@ -4,8 +4,8 @@ NAME = libftprintf.a
 CC			= cc
 RM			= rm -f
 CFLAGS		= -I include -I libft -Wall -Wextra -Werror
-AR			= ar rc
-SRC			= tester.c ft_printf.c  # libft.h needs to be called aswell
+AR			= ar rcs
+SRC			=./libft/ft*.c ./ft*.c
 
 OBJ			= $(SRC:.c=.o)
 BONUS_OBJ	= $(BONUS:.c=.o)
@@ -15,12 +15,14 @@ $(NAME):	$(OBJ) libft.a
 
 all:		$(NAME)
 
+output: $(SRC)
+	$(CC) $(SRC) -o  output
 
-libft.a:
-	make -C libft
+#libft.a:
+#	make -C libft
 
 clean:
-			$(RM) $(OBJ) libft.a
+			$(RM) $(OBJ) libft.a output
 			make -C libft fclean
 
 fclean:		clean
