@@ -18,8 +18,8 @@ all:		$(NAME)
 output: $(SRC)
 	$(CC) $(SRC) -o  output
 
-#libft.a:
-#	make -C libft
+libft.a:
+	make -C libft
 
 clean:
 			$(RM) $(OBJ) libft.a output
