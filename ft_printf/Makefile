@@ -5,7 +5,7 @@ CC			= cc
 RM			= rm -f
 CFLAGS		= -I include -I libft -Wall -Wextra -Werror
 AR			= ar rcs
-SRC			=./libft/ft*.c ./ft*.c
+SRC			=./libft/ft*.c ./ft*.c	# problem might be trying to create the *.o file
 
 OBJ			= $(SRC:.c=.o)
 BONUS_OBJ	= $(BONUS:.c=.o)

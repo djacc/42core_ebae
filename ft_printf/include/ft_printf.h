@@ -10,8 +10,8 @@
 
 
 
-// # if __APPLE__
-// #  define IS_MACOS 1
-// # else
-// #  define IS_MACOS 0
-// # endif
+# if __APPLE__
+#  define IS_MACOS 1
+# else
+#  define IS_MACOS 0
+# endif
