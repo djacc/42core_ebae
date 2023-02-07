@@ -3,30 +3,36 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-int	ft_printf(const int num, ...)
+int	printer(char *placeholder, ...)
 {
 	va_list args;
-	int	i;
+	int		pos;
+	int		num_args;
 
-	va_start(args, num);
-	i = 0;
-	while (i < num)
+	pos = 0;
+	num_args = ft_strlen(placeholder);
+	va_start(args, placeholder);
+	while (pos < num_args)
 	{
-		int value = va_arg(args, int);
-		printf("%d, %d\n", i, value);
-		i++;
+		if (placeholder[pos] == 'd')
+		{
+			int x = va_arg(args, int);
+			printf("%d\n", x);
+		}
+		else if (placeholder[pos] == 'f')
+		{
+			double x = va_arg(args, double);
+			printf("%f\n", x);
+
+		}
+		pos++;
 	}
 	va_end(args);
 	return (0);
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
-	if (argc == 1)
-	{
-		return (1);
-	}
-	// ft_printf(argv[]);
-	ft_printf(1, 7, 100, 999 );
+	printer("ddfd", 4, 2 , 1.5, 3);
 	return (0);
 }

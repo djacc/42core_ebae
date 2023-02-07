@@ -1,55 +1,45 @@
-// #include "include/ft_printf.h"
-// #include <unistd.h>
-// #include <stdio.h>
+#include "include/ft_printf.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <stdarg.h>
 
-// int	ft_printf(const char *str)
-// {
+// printf("I have %i cookies!\n", count);
 
-// 	// this part will do the output!!!
-// 	int	pos;
-// 	pos = 0;			
-// 	while (str[pos])	// condition: what if the input is null char?
-// 	{
-// 		write(1, &str[pos], 1);
-// 		pos++;
-// 	}
-// 	printf("\n\tlen: %li\n", ft_strlen(str));
-// 	write(1, "\n", 1);
-
-// 	// this part will scan and look for certain triggers
+int	ft_printf(const char *str, ...)
+{
+	va_list	args;
 	
-// 	/*
-	
-// 		printf("%s blabla %i", str, int);
+	va_start(args, str);
+	while (*str)
+	{
+		if (*str ==  '%')
+		{
+			++str;
+			switch (*str)
+			{
+				case 'd':
+					int value = va_arg(args, int);
+					printf("%d", value);
+					break;
+			}
+		}
+		else
+		{
+			putchar(*str); // use write instead
+		}
+		str++;
+	}
+	va_end(args);
+	return (0);
+}
+// the funciton is going thru str and checking for % signs,
+// if no % then its printed, (MISSING \n special char)
+// if % then check next char for case.
+// print each case according to its conditions
 
-// 		the structure of printf:
-// 		1. check for syntax correctness
-// 			- scan the text, count % == no of arguments?
-// 		2. check for special signs "\n"
-// 		3. check for % conditions
-// 		===== Idea would be to go thru every position and print out the char,
-// 		if the pos encounters special sign, print the according thing
-// 		if the pos encoounters % condition, convert variable and print
-// 		===== Alternatively you could create a new string that stores the new output
-// 		instead of printing out as its going thru the string
 
-// 		// to do this we first need to find out how to modify the makefile
-// 		so that i can test with ./a.out file which is still connected to the libs
-// 		DONE!
-
-// 		first check input correctness, for that understand multiple vatiable function
-
-// 	*/
-
-// 	return (0);
-// }
-
-// int main(int argc, char const *argv[])
-// {
-// 	if (argc == 1)
-// 	{
-// 		return (1);
-// 	}
-// 	ft_printf(argv[1]);
-// 	return (0);
-// }
+int main(int argc, char const *argv[])
+{
+	ft_printf(argv[1]);
+	return (0);
+}
