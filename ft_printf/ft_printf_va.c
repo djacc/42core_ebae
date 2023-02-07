@@ -8,7 +8,7 @@ int	ft_printf(const int num, ...)
 	va_list args;
 	int	i;
 
-	va_start(args, num)
+	va_start(args, num);
 	i = 0;
 	while (i < num)
 	{
