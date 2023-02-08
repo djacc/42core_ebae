@@ -1,12 +1,9 @@
 #include "include/ft_printf.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
-
-// printf("I have %i cookies!\n", count);
 
 int	ft_printf(const char *str, ...)
 {
+	printf("\nSTARTING PRINTF OPERATION:\n");		//remove!
+	printf("=====================\n");
 	va_list	args;
 	
 	va_start(args, str);
@@ -15,31 +12,52 @@ int	ft_printf(const char *str, ...)
 		if (*str ==  '%')
 		{
 			++str;
-			switch (*str)
+			switch (*str)	// cspdiuxX% (9 cases)
 			{
-				case 'd':
-					int value = va_arg(args, int);
-					printf("%d", value);
+				case 'c':
+					ft_c_conversion(va_arg(args, int));
+					break;
+
+				case 's':
+					ft_s_conversion(va_arg(args, char*));
+					break;
+
+				case 'p':
+					ft_p_conversion(va_arg(args, void *));
 					break;
 			}
 		}
 		else
 		{
-			putchar(*str); // use write instead
+			 write(1, str, 1); // ??? INHALT OF address of str is not *str? correct so just use str
 		}
 		str++;
 	}
 	va_end(args);
+	printf("\n=====================\n");			//remove!
+	printf("FINISH!\n");
 	return (0);
 }
-// the funciton is going thru str and checking for % signs,
-// if no % then its printed, (MISSING \n special char)
-// if % then check next char for case.
-// print each case according to its conditions
+// Error when % no specifier
+// Error when not used argument
 
-
-int main(int argc, char const *argv[])
+int main()
 {
-	ft_printf(argv[1]);
+	// char x = 'x';
+	// char *s = "no way! :D";
+	int i = 998;
+	int *ptr = &i;
+
+
+	printf("\n--OWN--\n");
+	// ft_printf("THE CHAR IS %c \n! new line\n", x);
+	// ft_printf("string is %s \n! new line\n", s);
+	ft_printf("address of i:\n%p\n", (void *)ptr);
+	
+
+
+	printf("\n--LIB--\n");
+	// printf("THE CHAR IS %c \n! new line\n", x);
+	printf("address of i:\n%p\n", (void *)ptr);
 	return (0);
 }

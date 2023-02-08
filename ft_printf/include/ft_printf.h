@@ -2,16 +2,15 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
+# include <stdio.h>
+# include <stdarg.h>
+
 #include "../libft/libft.h"
 
+int		ft_printf(const char *str, ...);
+
+void	ft_c_conversion(int c);
+void	ft_s_conversion(char *str);
+void	ft_p_conversion(void *ptr);
+
 #endif
-
-
-
-
-
-# if __APPLE__
-#  define IS_MACOS 1
-# else
-#  define IS_MACOS 0
-# endif
