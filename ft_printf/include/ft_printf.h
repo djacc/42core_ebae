@@ -13,4 +13,7 @@ void	ft_c_conversion(int c);
 void	ft_s_conversion(char *str);
 void	ft_p_conversion(void *ptr);
 
+void	ft_d_conversion(int n);
+void	ft_i_conversion(int n);
+
 #endif

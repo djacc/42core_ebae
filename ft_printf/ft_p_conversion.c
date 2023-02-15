@@ -2,12 +2,13 @@
 
 void	ft_p_conversion(void *ptr)
 {
-	write(1, &ptr, 1);
-	printf("\n");
-	printf("%p", ptr);
-}
-// the address is already given in hex right?
+	(void) *hold = &ptr;
 
+	printf("\nhold: %s", hold);
+	printf("\nlib fun:%p", ptr);	// THIS IS HOW IT SHOULD LOOK
+}
+/*how to store address in another variable? do i need to convert it to hex?
+*/
 
 
 
