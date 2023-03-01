@@ -6,5 +6,4 @@ void	ft_s_conversion(char *str)
 
 	len = ft_strlen(str);
 	write(1, str, len);
-
 }

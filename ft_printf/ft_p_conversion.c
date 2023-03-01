@@ -2,11 +2,12 @@
 
 void	ft_p_conversion(void *ptr)
 {
-	(void) *hold = &ptr;
+	void *hold = &ptr;
 
-	printf("\nhold: %s", hold);
-	printf("\nlib fun:%p", ptr);	// THIS IS HOW IT SHOULD LOOK
+	// printf("\nhold: %s", hold);
+	// printf("\nlib fun:%p", ptr);	// THIS IS HOW IT SHOULD LOOK
 }
+
 /*how to store address in another variable? do i need to convert it to hex?
 */
 

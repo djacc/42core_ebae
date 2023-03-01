@@ -2,12 +2,13 @@
 
 void	ft_d_conversion(int c)
 {
-	write(1, &c, 1);
+	// create an empty string
+	// itoa the input int to str
+	// count str length
+	// write the string 
 
+	char *str;
 
-	// example:
-
-	9999
-
-	recursion to print out:
+	str = ft_itoa(c);
+	write(1, str, ft_strlen(str));
 }
