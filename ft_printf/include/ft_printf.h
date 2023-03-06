@@ -17,6 +17,3 @@ void	ft_d_conversion(int n);
 void	ft_i_conversion(int n);
 
 #endif
-
-4294967295
-4294967294

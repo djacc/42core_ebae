@@ -42,7 +42,7 @@ int	ft_printf(const char *str, ...)
 				case 'X':
 				case '%':
 				
-			}
+			}				
 		}
 		else
 		{
