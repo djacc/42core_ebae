@@ -1,14 +1,13 @@
 #include "include/ft_printf.h"
 
-void	ft_d_conversion(int c)
+int	ft_d_conversion(int c)
 {
-	// create an empty string
-	// itoa the input int to str
-	// count str length
-	// write the string 
+	int		len;
+	char	*str;
 
-	char *str;
-
+	// missing len = 0 ?
 	str = ft_itoa(c);
-	write(1, str, ft_strlen(str));
+	len = ft_strlen(str);
+	write(1, str, len);
+	return (len);
 }
