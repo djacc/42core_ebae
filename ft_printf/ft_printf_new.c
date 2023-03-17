@@ -9,16 +9,16 @@ int	ft_format_specifier(va_list args, const char format)
 		print_len += ft_c_conversion(va_arg(args, int));
 	else if (format == 's')
 		print_len += ft_s_conversion(va_arg(args, char *));
-	else if (format == 'p')							// revise p
+	else if (format == 'p')							// test if it works
 		print_len += ft_p_conversion(va_arg(args, void *));
 	else if (format == 'd' || 'i')
-		ft_d_conversion(va_args(args, int));
+		print_len += ft_d_conversion(va_args(args, int));
 	else if (format == 'u')							// revise u
-		ft_u_conversion(va_args(args, unsigned int));
-	else if (format == 'x' || format == 'X')		// revise xX
-		ft_x_conversion(va_args(args, unsigned int), format);
+		print_len += ft_u_conversion(va_args(args, unsigned int));
+	else if (format == 'x' || format == 'X')		// understand
+		print_len += ft_x_conversion(va_args(args, unsigned int), format);
 	else if (format == '%')
-		ft_print_percent();
+		print_len += ft_print_percent();
 
 	return
 }

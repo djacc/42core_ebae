@@ -1,9 +1,10 @@
 #include "include/ft_printf.h"
 
-// revise this function
-
-void	ft_print_ptr(uintptr_t n)
+int	ft_print_ptr(uintptr_t n)
 {
+	int	len;
+
+	len = 0;
 	if (n >= 16)
 	{
 		ft_print_ptr(n/16);
@@ -11,20 +12,26 @@ void	ft_print_ptr(uintptr_t n)
 	}
 	else
 	{
+		len++;							// i think this is correct.
 		if (n <= 9)
-			ft_putchar_fd((n + '0'), 1)	// what is going on here?
+			ft_putchar_fd((n + '0'), 1)
 		else
-			ft_putchar_fd((n - 10 + 'a'), 1)	//and here?
+			ft_putchar_fd((n - 10 + 'a'), 1)
 	}
+	return (len);
 }
 
-void	ft_p_conversion(unsigned long long ptr)	// why long long?
+int	ft_p_conversion(unsigned long long ptr)
 {
+	int	len;
+
+	len = 0;
 	if (ptr == 0)
-		write(1, "0x0", 3);
+		len += write(1, "0x0", 3);
 	else
 	{
-		write(1, "0x", 2)
-		ft_print_ptr(ptr);
+		len += write(1, "0x", 2);
+		len += ft_print_ptr(ptr);
 	}
+	return (len);
 }

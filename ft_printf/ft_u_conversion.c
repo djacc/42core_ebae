@@ -32,14 +32,18 @@ char	*ft_utioa(unsigned int n)
 	return (num);
 }
 
-void	ft_u_conversion(unsigned int n)
+int	ft_u_conversion(unsigned int n)
 {
+	int	len;
 	char *num;
+
+	len = 0;
 	if (n == 0)
-		ft_printstr(num)		// implement ft_printstr
+		len += ft_printstr(num)		// implement ft_printstr
 	else
 	{
 		num = ft_utioa(n);		// implement unsigned itoa
 		free(num);				//because we malloc in uitoa?
 	}
+	return (len);
 }

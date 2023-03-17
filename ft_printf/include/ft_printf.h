@@ -2,18 +2,29 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdarg.h>
 
 #include "../libft/libft.h"
 
 int		ft_printf(const char *str, ...);
+int		ft_format_specifier(va_list args, const char format);
 
-void	ft_c_conversion(int c);
-void	ft_s_conversion(char *str);
-void	ft_p_conversion(void *ptr);
+int		ft_s_conversion(char *str);
+int		ft_c_conversion(int c);
+int		ft_d_conversion(int c);
 
-void	ft_d_conversion(int n);
-void	ft_i_conversion(int n);
+
+int		ft_p_conversion(unsigned long long ptr);
+int		ft_print_ptr(uintptr_t n);
+
+int		ft_u_conversion(unsigned int n);
+char	*ft_utioa(unsigned int n);
+int		ft_num_len(unsigned int num);
+
+int		ft_x_conversion(unsigned int num, const char format);
+void	ft_put_hex(unsigned nt num, const char format);
+int		ft_hex_len(unsigned int num);
+
+int	ft_print_percent(void);
 
 #endif
