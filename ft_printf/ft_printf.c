@@ -10,17 +10,17 @@ int	ft_format_specifier(va_list args, const char format)
 	else if (format == 's')
 		print_len += ft_s_conversion(va_arg(args, char *));
 	else if (format == 'p')							// test if it works
-		print_len += ft_p_conversion(va_arg(args, void *));
+		print_len += ft_p_conversion(va_arg(args, unsigned long long));
 	else if (format == 'd' || 'i')
-		print_len += ft_d_conversion(va_args(args, int));
+		print_len += ft_d_conversion(va_arg(args, int));
 	else if (format == 'u')							// revise u
-		print_len += ft_u_conversion(va_args(args, unsigned int));
+		print_len += ft_u_conversion(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')		// understand
-		print_len += ft_x_conversion(va_args(args, unsigned int), format);
+		print_len += ft_x_conversion(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		print_len += ft_print_percent();
 
-	return
+	return (print_len);
 }
 
 int ft_printf(const char *str, ...)
@@ -29,6 +29,7 @@ int ft_printf(const char *str, ...)
 	int		count;
 	int		print_len;
 
+	count = 0;
 	print_len = 0;
 	va_start(args, str);
 	while (str[count])
@@ -40,7 +41,7 @@ int ft_printf(const char *str, ...)
 		}
 		else
 		{
-			write(1, str[count], 1);
+			write(1, &str[count], 1);
 			print_len++;
 		}
 		count++;

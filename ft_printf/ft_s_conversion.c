@@ -6,7 +6,7 @@ int	ft_s_conversion(char *str)
 
 	if (!str)
 	{
-		write(1, "(null)", 6)
+		write(1, "(null)", 6);
 		return (6);
 	}
 	len = ft_strlen(str);

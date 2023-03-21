@@ -1,6 +1,6 @@
 #include "include/ft_printf.h"
 
-int	ft_print_ptr(uintptr_t n)
+int	ft_print_ptr(intptr_t n)
 {
 	int	len;
 
@@ -14,9 +14,9 @@ int	ft_print_ptr(uintptr_t n)
 	{
 		len++;							// i think this is correct.
 		if (n <= 9)
-			ft_putchar_fd((n + '0'), 1)
+			ft_putchar_fd((n + '0'), 1);
 		else
-			ft_putchar_fd((n - 10 + 'a'), 1)
+			ft_putchar_fd((n - 10 + 'a'), 1);
 	}
 	return (len);
 }

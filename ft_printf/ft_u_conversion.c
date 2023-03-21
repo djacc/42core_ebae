@@ -1,5 +1,23 @@
 #include "include/ft_printf.h"
 
+int	ft_printstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
+}
+
 int	ft_num_len(unsigned int num)	// understand its use for itoa
 {
 	int	len;
@@ -35,15 +53,19 @@ char	*ft_utioa(unsigned int n)
 int	ft_u_conversion(unsigned int n)
 {
 	int	len;
-	char *num;
+	char	*num;
 
 	len = 0;
 	if (n == 0)
-		len += ft_printstr(num)		// implement ft_printstr
+		len += ft_printstr("0");
 	else
 	{
-		num = ft_utioa(n);		// implement unsigned itoa
-		free(num);				//because we malloc in uitoa?
+		num = ft_utioa(n);
+		if (num != NULL)
+		{
+			len += ft_printstr(num);
+			free(num);
+		}
 	}
 	return (len);
 }
