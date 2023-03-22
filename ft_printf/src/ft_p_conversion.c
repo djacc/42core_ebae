@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include "../libft/libft.h"
 
-int	ft_print_ptr(intptr_t n)		//UINTPTR
+int	ft_print_ptr(unsigned long long n)		//UINTPTR
 {
 	int	len;
 
