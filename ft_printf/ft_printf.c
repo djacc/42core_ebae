@@ -1,4 +1,5 @@
 #include "include/ft_printf.h"
+#include "libft/libft.h"
 
 int	ft_format_specifier(va_list args, const char format)
 {
@@ -11,7 +12,7 @@ int	ft_format_specifier(va_list args, const char format)
 		print_len += ft_s_conversion(va_arg(args, char *));
 	else if (format == 'p')							// test if it works
 		print_len += ft_p_conversion(va_arg(args, unsigned long long));
-	else if (format == 'd' || 'i')
+	else if (format == 'd' || format == 'i')
 		print_len += ft_d_conversion(va_arg(args, int));
 	else if (format == 'u')							// revise u
 		print_len += ft_u_conversion(va_arg(args, unsigned int));

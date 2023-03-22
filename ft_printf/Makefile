@@ -1,35 +1,69 @@
 
-NAME = libftprintf.a
-
-CC			= cc
+NAME		= libftprintf.a
+INCLUDE		= include
+LIBFT		= libft
+SRC_DIR		= src/
+OBJ_DIR		= obj/
+CC			= gcc
+CFLAGS		= -Wall -Werror -Wextra -I
 RM			= rm -f
-CFLAGS		= -I include -I libft -Wall -Wextra -Werror
 AR			= ar rcs
-SRC			= ft_printf.c ft_print_percent.c ft_c_conversion.c \
-ft_d_conversion.c ft_p_conversion.c ft_s_conversion.c ft_u_conversion.c ft_x_conversion.c
 
-# ./libft/ft*.c
+# Colors
 
-OBJ			= $(SRC:.c=.o)
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
 
-$(NAME):	$(OBJ) libft.a
-			$(AR) $(NAME) $(OBJ)
+#Sources
+
+SRC_FILES	=	ft_printf ft_print_percent ft_c_conversion \
+ft_d_conversion ft_p_conversion ft_s_conversion ft_u_conversion ft_x_conversion
+
+SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+
+###
+
+OBJF		=	.cache_exists
 
 all:		$(NAME)
 
-# output: $(SRC)
-#	$(CC) $(SRC) -o  output
+$(NAME):	$(OBJ)
+			@make -C $(LIBFT)
+			@cp libft/libft.a .
+			@mv libft.a $(NAME)
+			@$(AR) $(NAME) $(OBJ)
+			@echo "$(GREEN)ft_printf compiled!$(DEF_COLOR)"
 
-libft.a:
-	make -C libft
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
+			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
+			@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+$(OBJF):
+			@mkdir -p $(OBJ_DIR)
 
 clean:
-			$(RM) $(OBJ) libft.a output
-			make -C libft fclean
+			@$(RM) -rf $(OBJ_DIR)
+			@make clean -C $(LIBFT)
+			@echo "$(BLUE)ft_printf object files cleaned!$(DEF_COLOR)"
 
 fclean:		clean
-			$(RM) $(NAME) # output
+			@$(RM) -f $(NAME)
+			@$(RM) -f $(LIBFT)/libft.a
+			@echo "$(CYAN)ft_printf executable files cleaned!$(DEF_COLOR)"
+			@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
 
-re:			fclean all 
+re:			fclean all
+			@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEF_COLOR)"
 
-.PHONY:		all clean fclean re libft.a
+norm:
+			@norminette $(SRC) $(INCLUDE) $(LIBFT) | grep -v Norme -B1 || true
+
+.PHONY:		all clean fclean re norm

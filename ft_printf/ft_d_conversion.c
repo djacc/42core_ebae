@@ -1,4 +1,5 @@
-#include "include/ft_printf.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_d_conversion(int c)
 {
