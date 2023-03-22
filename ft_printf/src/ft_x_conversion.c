@@ -1,5 +1,5 @@
 #include "ft_printf.h"
-#include "libft.h"
+#include "../libft/libft.h"
 
 int	ft_hex_len(unsigned int num)
 {
@@ -23,7 +23,7 @@ void ft_put_hex(unsigned int num, const char format)
 	}
 	else
 	{
-		if (num >= 9)
+		if (num<= 9)
 			ft_putchar_fd((num + '0'), 1);	//	understand
 		else
 		{
