@@ -1,5 +1,5 @@
-#include "include/ft_printf.h"
-#include "libft/libft.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_format_specifier(va_list args, const char format)
 {

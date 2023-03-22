@@ -1,5 +1,5 @@
 #include "ft_printf.h"
-#include "libft.h"
+#include "../libft/libft.h"
 
 int	ft_d_conversion(int c)
 {
@@ -10,5 +10,6 @@ int	ft_d_conversion(int c)
 	str = ft_itoa(c);
 	len = ft_strlen(str);
 	write(1, str, len);
+	free(str);
 	return (len);
 }

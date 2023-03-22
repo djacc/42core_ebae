@@ -4,8 +4,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-#include "libft.h"
-
 int		ft_printf(const char *str, ...);
 int		ft_format_specifier(va_list args, const char format);
 

@@ -1,4 +1,3 @@
-
 NAME		= libftprintf.a
 INCLUDE		= include
 LIBFT		= libft
@@ -67,3 +66,9 @@ norm:
 			@norminette $(SRC) $(INCLUDE) $(LIBFT) | grep -v Norme -B1 || true
 
 .PHONY:		all clean fclean re norm
+
+
+
+
+
+
