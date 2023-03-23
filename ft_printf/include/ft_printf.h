@@ -3,6 +3,7 @@
 
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdint.h>
 
 int		ft_printf(const char *str, ...);
 int		ft_format_specifier(va_list args, const char format);
@@ -11,9 +12,9 @@ int		ft_s_conversion(char *str);
 int		ft_c_conversion(int c);
 int		ft_d_conversion(int c);
 
-
 int		ft_p_conversion(unsigned long long ptr);
-int		ft_print_ptr(intptr_t n);
+void	ft_put_ptr(uintptr_t num);
+int	ft_ptr_len(uintptr_t num);
 
 int		ft_u_conversion(unsigned int n);
 char	*ft_utioa(unsigned int n);

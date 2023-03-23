@@ -1,38 +1,50 @@
 #include "ft_printf.h"
 #include "../libft/libft.h"
 
-int	ft_print_ptr(unsigned long long n)		//UINTPTR
+int	ft_ptr_len(uintptr_t num)
 {
 	int	len;
 
 	len = 0;
-	if (n >= 16)
+	while (num != 0)
 	{
-		ft_print_ptr(n/16);
-		ft_print_ptr(n%16);
-	}
-	else
-	{
-		len++;							// i think this is correct.
-		if (n <= 9)
-			ft_putchar_fd((n + '0'), 1);
-		else
-			ft_putchar_fd((n - 10 + 'a'), 1);
+		len++;
+		num = num / 16;
 	}
 	return (len);
 }
 
-int	ft_p_conversion(unsigned long long ptr)
+void	ft_put_ptr(uintptr_t num)
 {
-	int	len;
-
-	len = 0;
-	if (ptr == 0)
-		len += write(1, "0x0", 3);
+	if (num >= 16)
+	{
+		ft_put_ptr(num / 16);
+		ft_put_ptr(num % 16);
+	}
 	else
 	{
-		len += write(1, "0x", 2);
-		len += ft_print_ptr(ptr);
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+			ft_putchar_fd((num - 10 + 'a'), 1);
 	}
-	return (len);
+}
+
+int	ft_p_conversion(unsigned long long ptr)
+{
+	int	print_length;
+
+	print_length = 0;
+	print_length += write(1, "0x", 2);
+	if (ptr == 0)
+	{
+		print_length = 6;
+		write(1, "(null)", 6);
+	}
+	else
+	{
+		ft_put_ptr(ptr);
+		print_length += ft_ptr_len(ptr);	//(nil)
+	}
+	return (print_length);
 }
