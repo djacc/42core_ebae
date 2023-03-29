@@ -1,4 +1,16 @@
-#include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_u_conversion.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/29 16:50:34 by ebae              #+#    #+#             */
+/*   Updated: 2023/03/29 19:04:37 by ebae             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/ft_printf.h"
 #include "../libft/libft.h"
 
 int	ft_printstr(char *str)
@@ -19,7 +31,7 @@ int	ft_printstr(char *str)
 	return (i);
 }
 
-int	ft_num_len(unsigned int num)	// understand its use for itoa
+int	ft_num_len(unsigned int num)
 {
 	int	len;
 
@@ -32,16 +44,16 @@ int	ft_num_len(unsigned int num)	// understand its use for itoa
 	return (len);
 }
 
-char	*ft_utioa(unsigned int n)
+char	*ft_uitoa(unsigned int n)
 {
 	char	*num;
 	int		len;
 
-	len = ft_num_len(n);		// implement len num finder
+	len = ft_num_len(n);
 	num = (char *)malloc(sizeof (char) * (len + 1));
-	if(!num)
+	if (!num)
 		return (0);
-	num[len] = '\0';			// understand this part
+	num[len] = '\0';
 	while (n != 0)
 	{
 		num[len - 1] = n % 10 + 48;
@@ -53,7 +65,7 @@ char	*ft_utioa(unsigned int n)
 
 int	ft_u_conversion(unsigned int n)
 {
-	int	len;
+	int		len;
 	char	*num;
 
 	len = 0;
@@ -61,7 +73,7 @@ int	ft_u_conversion(unsigned int n)
 		len += ft_printstr("0");
 	else
 	{
-		num = ft_utioa(n);
+		num = ft_uitoa(n);
 		if (num != NULL)
 		{
 			len += ft_printstr(num);

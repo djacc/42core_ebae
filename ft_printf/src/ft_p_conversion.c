@@ -1,4 +1,16 @@
-#include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_p_conversion.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebae <ebae@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/29 16:50:20 by ebae              #+#    #+#             */
+/*   Updated: 2023/03/29 18:49:04 by ebae             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/ft_printf.h"
 #include "../libft/libft.h"
 
 int	ft_ptr_len(uintptr_t num)
@@ -16,6 +28,8 @@ int	ft_ptr_len(uintptr_t num)
 
 void	ft_put_ptr(uintptr_t num)
 {
+	char	c;
+
 	if (num >= 16)
 	{
 		ft_put_ptr(num / 16);
@@ -24,9 +38,10 @@ void	ft_put_ptr(uintptr_t num)
 	else
 	{
 		if (num <= 9)
-			ft_putchar_fd((num + '0'), 1);
+			c = num + '0';
 		else
-			ft_putchar_fd((num - 10 + 'a'), 1);
+			c = num - 10 + 'a';
+		write(1, &c, 1);
 	}
 }
 
@@ -44,7 +59,7 @@ int	ft_p_conversion(unsigned long long ptr)
 	{
 		print_length += write(1, "0x", 2);
 		ft_put_ptr(ptr);
-		print_length += ft_ptr_len(ptr);	//(nil)
+		print_length += ft_ptr_len(ptr);
 	}
 	return (print_length);
 }
